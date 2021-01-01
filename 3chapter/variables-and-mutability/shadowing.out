@@ -1,0 +1,38 @@
+x = 5
+ROOT SCOPE: x is: 5
+
+x + 1
+ROOT SCOPE: x has been redefined/shadowed to be: 6
+
+==>	x * 3
+	CHILD SCOPE: x has been redefined/shadowed to be: 18
+
+x * 2
+ROOT SCOPE: x has been redefined/shadowed yet again to be: 12
+
+ROOT SCOPE: x has been redefined/shadowed to a different type: Hello, world!
+
+x is currently at address: 93852010828079
+x is now shadowed to: Hello, world.
+x is currently at address: 93852010828183
+*Shadowing changed the address*
+
+x is shadowed back to: 'Hello, world!', but is now mut.
+x is currently at address: 93852010828079
+x is mutated to: Goodbye, Bob!
+x is currently at address: 93852010828294
+*apparently mutating strings still changes the pointer addr*
+
+x is shadowed to: '5', is still mut.
+x is currently at address: 140726535018052
+x is mutated to: 10
+x is currently at address: 140726535018052
+*mutating did NOT change the address in the case of an int*
+
+x is shadowed back to: '5', but is now mut.
+x is currently at address: 140726535018412
+x is shadowed to: 10
+x is currently at address: 140726535018572
+*shadowing DID change the address in the case of an int*
+
+CONCLUSION: Strings and Lists must be handled in a special way.
