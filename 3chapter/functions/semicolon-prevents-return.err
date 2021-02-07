@@ -1,0 +1,13 @@
+error[E0308]: mismatched types
+ --> ./semicolon-prevents-return.rs:1:24
+  |
+1 | fn plus_one(x: i32) -> i32 {  // -> i32 tells rustc this function returns a value
+  |    --------            ^^^ expected `i32`, found `()`
+  |    |
+  |    implicitly returns `()` as its body has no tail or `return` expression
+2 |     x + 1;  // but this ';' tells rustc this is a statement and not a return val
+  |          - help: consider removing this semicolon
+
+error: aborting due to previous error
+
+For more information about this error, try `rustc --explain E0308`.

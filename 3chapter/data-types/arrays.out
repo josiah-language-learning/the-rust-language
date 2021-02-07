@@ -1,0 +1,26 @@
+The array 'a' is: [1, 2, 3, 4, 5]
+This is how to pretty-print it:
+[
+    1,
+    2,
+    3,
+    4,
+    5,
+]
+The months of the year are:
+[
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December",
+]
+The first month of the year is: January
+The last month of the year is: December

@@ -1,0 +1,54 @@
+error: expected one of `:`, `@`, or `|`, found `,`
+ --> params-and-args-without-type-sigs.rs:5:29
+  |
+5 | fn another_function(greeting, name, num_greets) {
+  |                             ^ expected one of `:`, `@`, or `|`
+  |
+  = note: anonymous parameters are removed in the 2018 edition (see RFC 1685)
+help: if this is a `self` type, give it a parameter name
+  |
+5 | fn another_function(self: greeting, name, num_greets) {
+  |                     ^^^^^^^^^^^^^^
+help: if this is a parameter name, give it a type
+  |
+5 | fn another_function(greeting: TypeName, name, num_greets) {
+  |                     ^^^^^^^^^^^^^^^^^^
+help: if this is a type, explicitly ignore the parameter name
+  |
+5 | fn another_function(_: greeting, name, num_greets) {
+  |                     ^^^^^^^^^^^
+
+error: expected one of `:`, `@`, or `|`, found `,`
+ --> params-and-args-without-type-sigs.rs:5:35
+  |
+5 | fn another_function(greeting, name, num_greets) {
+  |                                   ^ expected one of `:`, `@`, or `|`
+  |
+  = note: anonymous parameters are removed in the 2018 edition (see RFC 1685)
+help: if this is a parameter name, give it a type
+  |
+5 | fn another_function(greeting, name: TypeName, num_greets) {
+  |                               ^^^^^^^^^^^^^^
+help: if this is a type, explicitly ignore the parameter name
+  |
+5 | fn another_function(greeting, _: name, num_greets) {
+  |                               ^^^^^^^
+
+error: expected one of `:`, `@`, or `|`, found `)`
+ --> params-and-args-without-type-sigs.rs:5:47
+  |
+5 | fn another_function(greeting, name, num_greets) {
+  |                                               ^ expected one of `:`, `@`, or `|`
+  |
+  = note: anonymous parameters are removed in the 2018 edition (see RFC 1685)
+help: if this is a parameter name, give it a type
+  |
+5 | fn another_function(greeting, name, num_greets: TypeName) {
+  |                                     ^^^^^^^^^^^^^^^^^^^^
+help: if this is a type, explicitly ignore the parameter name
+  |
+5 | fn another_function(greeting, name, _: num_greets) {
+  |                                     ^^^^^^^^^^^^^
+
+error: aborting due to 3 previous errors
+

@@ -1,0 +1,11 @@
+error[E0308]: `if` and `else` have incompatible types
+ --> illegal-if-in-let.rs:6:44
+  |
+6 |     let number = if condition { 5 } else { "six" };
+  |                                 -          ^^^^^ expected integer, found `&str`
+  |                                 |
+  |                                 expected because of this
+
+error: aborting due to previous error
+
+For more information about this error, try `rustc --explain E0308`.

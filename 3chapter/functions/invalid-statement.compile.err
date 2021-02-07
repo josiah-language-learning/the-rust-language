@@ -1,0 +1,27 @@
+error[E0658]: `let` expressions in this position are experimental
+ --> invalid-statement.rs:2:14
+  |
+2 |     let x = (let y = 6);
+  |              ^^^^^^^^^
+  |
+  = note: see issue #53667 <https://github.com/rust-lang/rust/issues/53667> for more information
+
+error: expected expression, found statement (`let`)
+ --> invalid-statement.rs:2:14
+  |
+2 |     let x = (let y = 6);
+  |              ^^^^^^^^^
+  |
+  = note: variable declaration using `let` is a statement
+
+warning: unnecessary parentheses around assigned value
+ --> invalid-statement.rs:2:13
+  |
+2 |     let x = (let y = 6);
+  |             ^^^^^^^^^^^ help: remove these parentheses
+  |
+  = note: `#[warn(unused_parens)]` on by default
+
+error: aborting due to 2 previous errors; 1 warning emitted
+
+For more information about this error, try `rustc --explain E0658`.

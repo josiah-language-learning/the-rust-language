@@ -1,0 +1,10 @@
+error: this operation will panic at runtime
+  --> invalid-array-element-access.rs:11:53
+   |
+11 |     println!("The 6th element of array 'a' is: {}", a[index]);
+   |                                                     ^^^^^^^^ index out of bounds: the length is 5 but the index is 5
+   |
+   = note: `#[deny(unconditional_panic)]` on by default
+
+error: aborting due to previous error
+

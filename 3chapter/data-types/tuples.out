@@ -1,0 +1,27 @@
+The value of the tuple is: (500, 6.4, 1)
+The inferred type of the tuple is: (i32, f64, i32)
+This is how to pretty-print it:
+(
+    500,
+    6.4,
+    1,
+)
+The new shadowed value of the tuple is: (500, 6.4, 1)
+The forced/declared type of the tuple is: (i64, f64, u8)
+
+The value of 'a' is: 500
+The value of 'b' is: 6.4
+The value of 'c' is: 1
+The value of 'five_hundred' is: 500
+The value of 'six_point_four' is: 6.4
+The value of 'one' is: 1
+The current location of the tuple is: 140727252478464
+The tuple has been shadowed to now be value: (200, 4.6, 3)
+The current location of the tuple is: 140727252479216
+*As one would expect, shadowing changes the tuple address.*
+The tuple is shadowed back to (500, 6.4, 1) but is now mutable.
+The current address of the tuple is 140727252479440
+TThe tuple is mutated to (200, 4.6, 3), now.
+The current address of the tuple is 140727252479440
+*The address did not change.*
+*This indicates that Rust must not reallocate for Tuples because the types are known at compile time.*
